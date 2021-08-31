@@ -20,15 +20,15 @@ router.get('/user-occupation', function(req, res, next) {
 });
 
 /* GET parameter. */
-router.get('/:path', function(req, res, next) {
-	const path = req.params.path;
+// router.get('/:path', function(req, res, next) {
+// 	const path = req.params.path;
 
-	res.json(
-		{
-			path: path
-		}
-	);
-});
+// 	res.json(
+// 		{
+// 			path: path
+// 		}
+// 	);
+// });
 
 
 /* GET parameter with semi fixed path. */
