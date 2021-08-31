@@ -1,0 +1,10 @@
+{% extends 'layout.twig' %}
+
+{% block header %}
+	<h1 class="text-danger">User's Occupation</h1>
+{% endblock %}
+
+{% block content %}
+	{% set nameCap = name|capitalize %}
+	<h5 class="user-occupation">{{ "%s works as a(n) %s !"|format(nameCap,occupation) }}</h5>
+{% endblock %}
