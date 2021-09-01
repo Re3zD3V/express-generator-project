@@ -1,36 +1,46 @@
 {% extends 'layout.twig' %}
 
 {% block header %}
-	<h1>Profile</h1>
+	<div class="row d-flex flex-column">
+		<div class="col d-flex justify-content-center">
+			<h1 class="text-danger">Profile</h1>
+		</div>
+	</div>
 {% endblock %}
 
 {% block content %}
+	{% set firstname = name.firstname|capitalize %}
+	{% set lastname = name.lastname|capitalize %}
+	{% set fullname = '%s %s'|format( firstname, lastname ) %}
+
 	<div class="row">
-		<table>
-			<tr>
-				<th>Name:</th>
-				<td>
-					{% set firstname = name.firstname|capitalize %}
-					{% set lastname = name.lastname|capitalize %}
-					{{ '%s %s'|format( firstname, lastname ) }}
-				</td>
-			</tr>
-			<tr>
-				<th>Company:</th>
-				<td>{{ company|capitalize }}</td>
-			</tr>
-			<tr>
-				<th>Languages:</th>
-				<td>
-					<ul>
-						{% for language in languages %}
-							<li>{{ language }}</li>
-						{% endfor %}
-					</ul>
-				</td>
-			</tr>
-		</table>
-		<div class="d-flex justify-content-center">
+		<div class="col">
+			<h3 class="text-danger">{{ fullname }}</h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			<img src="{{ image }}" alt="{{ fullname }}" class="img-thumbnail rounded img-fluid">
+		</div>
+		<div class="col-7">
+			<table class="m-3">
+				<tr>
+					<th>Company:</th>
+					<td>{{ company|capitalize }}</td>
+				</tr>
+				<tr>
+					<th>Languages:</th>
+					<td>
+						<ul>
+							{% for language in languages %}
+								<li>{{ language }}</li>
+							{% endfor %}
+						</ul>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="d-flex justify-content-center mt-3">
 			<a href="/profiles" class="btn btn-info" role="button">Back</a>
 		</div>
 	</div>

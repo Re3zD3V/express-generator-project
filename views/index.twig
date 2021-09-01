@@ -1,18 +1,23 @@
 {% extends 'layout.twig' %}
 
 {% block header %}
-	<div class="row w-100 d-flex flex-row">
-		<div class="d-flex flex-row-reverse">
+	<div class="row d-flex flex-column">
+		<div class="col d-flex justify-content-end">
+			<a href="/profiles" class="btn btn-primary me-2 text-white" role="button">Check profiles</a>
 			<a href="/register" class="btn btn-success" role="button">Sign Up Now!</a>
 		</div>
-		<div class="d-flex justify-content-center">
+		<div class="col d-flex justify-content-center">
 			<h1 class="text-danger">{{title}}</h1>
 		</div>
 	</div>
 {% endblock %}
 
 {% block content %}
-	<p class="h4 text-primary">Hello, World !</p>
-	<p class="h5 text-secondary">Created my first Node JS + Express project !!</p>
-	<img src="/images/nodejs_express.png" width="30%" alt="NodeJs_Express">
+	<div class="row">
+		<div class="col d-flex flex-column align-items-center">
+			<p class="h4 text-primary">Hello, World !</p>
+			<p class="h5 text-secondary">Created my first Node JS + Express project !!</p>
+			<img src="/images/nodejs_express.png" width="30%" alt="NodeJs_Express">
+		</div>
+	</div>
 {% endblock %}

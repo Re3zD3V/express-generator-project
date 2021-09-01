@@ -1,11 +1,15 @@
 {% extends 'layout.twig' %}
 
 {% block header %}
-	<h1>New profile</h1>
+	<div class="row d-flex flex-column">
+		<div class="col d-flex justify-content-center">
+			<h1 class="text-danger">New profile</h1>
+		</div>
+	</div>
 {% endblock %}
 
 {% block content %}
-	<div class="container">
+	<div class="row">
 		<form action="/profiles/post" method="post" class="border px-4 py-3">
 			<div class="mb-3">
 				<label for="txtUsername" class="form-label">Username:</label>
@@ -26,6 +30,10 @@
 			<div class="mb-3">
 				<label for="txtLanguages" class="form-label">Languages:</label>
 				<input id="txtLanguages" name="txtLanguages" placeholder="Languages" type="text" class="form-control" required/>
+			</div>
+			<div class="mb-3">
+				<label for="txtImage" class="form-label">Image:</label>
+				<input id="txtImage" name="txtImage" placeholder="Image (/images/example.jpg)" type="text" class="form-control" required/>
 			</div>
 			<div class="d-flex justify-content-center">
 				<input type="reset" value="Reset" class="form-control w-25 me-3"/>

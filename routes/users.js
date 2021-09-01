@@ -2,21 +2,14 @@ var express = require('express');
 var router = express.Router();
 
 const profiles = {
-	gkachrida: {
-		name: {
-			firstname: 'ghizlane',
-			lastname: 'kachrida'
-		},
-		company: 'self',
-		languages: ['javascript', 'react', 'nodejs', 'php']
-	},
 	sjobs: {
 		name: {
 			firstname: 'steve',
 			lastname: 'jobs'
 		},
 		company: 'apple',
-		languages: ['objective-c', 'swift', 'c++']
+		languages: ['objective-c', 'swift', 'c++'],
+		image: '/images/sjobs.jpg'
 	},
 	bgates: {
 		name: {
@@ -24,7 +17,8 @@ const profiles = {
 			lastname: 'gates'
 		},
 		company: 'microsoft',
-		languages: ['c', 'c#', 'java']
+		languages: ['c', 'c#', 'java'],
+		image: '/images/bgates.jpg'
 	},
 }
 
@@ -52,7 +46,8 @@ router.post('/post', ( req, res, next ) => {
 			lastname: body.txtLastname
 		},
 		company: body.txtCompany,
-		languages: body.txtLanguages
+		languages: body.txtLanguages,
+		image: body.txtImage
 	};
 
 	res.redirect( '/profiles');
