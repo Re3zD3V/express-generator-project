@@ -1,0 +1,37 @@
+{% extends 'layout.twig' %}
+
+{% block header %}
+	<h1>Profile</h1>
+{% endblock %}
+
+{% block content %}
+	<div class="row">
+		<table>
+			<tr>
+				<th>Name:</th>
+				<td>
+					{% set firstname = name.firstname|capitalize %}
+					{% set lastname = name.lastname|capitalize %}
+					{{ '%s %s'|format( firstname, lastname ) }}
+				</td>
+			</tr>
+			<tr>
+				<th>Company:</th>
+				<td>{{ company|capitalize }}</td>
+			</tr>
+			<tr>
+				<th>Languages:</th>
+				<td>
+					<ul>
+						{% for language in languages %}
+							<li>{{ language }}</li>
+						{% endfor %}
+					</ul>
+				</td>
+			</tr>
+		</table>
+		<div class="d-flex justify-content-center">
+			<a href="/profiles" class="btn btn-info" role="button">Back</a>
+		</div>
+	</div>
+{% endblock %}

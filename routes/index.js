@@ -43,16 +43,16 @@ router.get('/product/:productid', function(req, res, next) {
 });
 
 /* GET multiple parameters. */
-router.get('/:username/:post', function(req, res, next) {
-	const username = req.params.username;
-	const post = req.params.post;
+// router.get('/:username/:post', function(req, res, next) {
+// 	const username = req.params.username;
+// 	const post = req.params.post;
 
-	res.json(
-		{
-			username: username,
-			post: post
-		}
-	);
-});
+// 	res.json(
+// 		{
+// 			username: username,
+// 			post: post
+// 		}
+// 	);
+// });
 
 module.exports = router;
