@@ -25,7 +25,8 @@ const profiles = {
 /* GET root path */
 router.get('/', ( req, res, next ) => {
 	const data = {
-		profiles : profiles
+		profiles : profiles,
+		timestamp: req.timestamp
 	};
 	res.render( 'profiles', data );
 });

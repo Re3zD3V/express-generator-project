@@ -3,7 +3,10 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	res.render('index', { title: 'Welcome to My Awesome Site' });
+	res.render('index', {
+		title: 'Welcome to My Awesome Site',
+		timestamp: req.timestamp
+	});
 });
 
 /* GET query parameters. */
